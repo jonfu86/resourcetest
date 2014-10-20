@@ -1,74 +1,34 @@
-.TeacherDashboardResources {
-
-}
-.header_wrapper{
-	margin: 0px 30px 0px 30px;
-	border-bottom: 1px solid #999999;
-}
-.header_wrapper h1{
-	font-family:'Roboto';
-	font-weight:400;
-	font-size:25px;
-	height:27px;
-	width:115px;
-	margin: 27px 28px 0px 0px;
-	color:#999999;
-	display:inline-block;
-}
-
-.new_folder_btn.digit-Button{
-	border-top-right-radius: 0px;
-	border-bottom-right-radius: 0px;
-	border-bottom-left-radius: 2px;
-	border-top-left-radius: 2px;
-	background-color: rgb(230, 230, 230);
-	background-image:none;
-	width: 86px;
-	height: 27px;
-	font-family: 'Roboto';
-	font-weight:700;
-	color:#808080;
-	font-size:11px;
-	margin-right:-2px;
-	box-shadow:none;
-	border:none;
-}
-.delete_btn.digit-Button{
-	border-top-right-radius: 2px;
-	border-bottom-right-radius: 2px;
-	border-bottom-left-radius: 0px;
-	border-top-left-radius: 0px;
-	background-color: rgb(230, 230, 230);
-	background-image:none;
-	left: 258px;
-	width: 62px;
-	height: 27px;
-	font-family: 'Roboto';
-	font-weight:700;
-	color:#808080;
-	font-size:11px;
-	margin:0px 6px 0px 0px;
-	box-shadow:none;
-	border:none;
-}
-.open_in_tabs_btn.digit-Button{
-	border-radius: 2px;
-	background-color: rgb(230, 230, 230);
-	background-image:none;
-	width: 94px;
-	height: 27px;
-	font-family: 'Roboto';
-	font-weight:700;
-	color:#808080;
-	font-size:11px;
-	box-shadow:none;
-	border:none;
-}
-.resources_subheader{
-	font-family:'Roboto';
-	font-weight:700;
-	color:#666666;
-	font-size:12px;
-	margin:35px 0px 3px 0px;
+.Main {}
+.root_folder{
 	
 }
+.Content{
+	margin:30px 55px;
+}
+.selected{
+	font-family: 'Roboto';
+	/*font-weight:700;*/
+	/*color:#666666;*/
+	color:white;
+	font-size:18px;
+	background:#999;
+}
+.item{
+	font-family: 'Roboto';
+	margin:5px 0px 0px 80px;
+	font-size:18px;
+	padding:3px;
+	
+}
+.item:hover{
+	background: #F7F7F7;
+	color:#666666;
+}
+.group-header {
+    margin-left:30px;
+}
+.PackageExplorer-list{
+	margin:30px 30px 0px 30px;
+}
+
+

@@ -1,16 +1,16 @@
 /**
- * @module ui/main.reel
+ * @module ui/resources-header.reel
  * @requires montage/ui/component
  */
 var Component = require("montage/ui/component").Component;
 
 /**
- * @class Main
+ * @class resourcesHeader
  * @extends Component
  */
-exports.Main = Component.specialize(/** @lends Main# */ {
+exports.ResourcesHeader = Component.specialize(/** @lends resourcesHeader# */ {
     constructor: {
-        value: function Main() {
+        value: function ResourcesHeader() {
             this.super();
         }
     }

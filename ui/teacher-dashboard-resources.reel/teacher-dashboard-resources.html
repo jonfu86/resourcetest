@@ -1,57 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
-    <link rel="stylesheet" type="text/css" href="teacher-dashboard-resources.css">
+    <meta charset="utf-8">
+    <title>Teacher Dashboard Resources</title>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500,400,300,900,700' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="teacher-dashboard-resources.css">
+
     <script type="text/montage-serialization">
-    {
-        "owner": {
-            "properties": {
-                "element": {"#": "owner"}
-            }
-        },
-        "Delete": {
-            "prototype": "digit/ui/button.reel",
-            "properties": {
-                "element": {"#": "Delete"},
-                "enabled": true,
-                "label": "Delete"
-            }
-        },
-        "New Folder": {
-            "prototype": "digit/ui/button.reel",
-            "properties": {
-                "element": {"#": "New Folder"},
-                "enabled": true,
-                "label": "New Folder"
-            }
-        },
-        "Open in Tabs": {
-            "prototype": "digit/ui/button.reel",
-            "properties": {
-                "element": {"#": "Open in Tabs"},
-                "enabled": true,
-                "label": "Open in Tabs"
+        {
+            "owner": {
+                "properties": {
+                    "element": {"#": "teacher-dashboard-resources"},
+                    "fileTreeController": {"@": "fileTreeController"}
+                }
+            },
+            "resources-header": {
+                "prototype": "ui/resources-header.reel",
+                "properties": {
+                    "element": {"#": "resources-header"}
+                }
+            },
+
+            "fileTreeController": {
+                "prototype": "core/tree-controller",
+                "properties": {
+                    "childrenPath": "children"
+                },
+                "bindings": {
+                    "content": {"<-": "@owner.content"}
+                }
+            },
+
+            "fileList": {
+                "prototype": "ui/tree.reel",
+                "properties": {
+                    "element": {"#": "fileList"},
+                    "isSelectionEnabled": true,
+                    "ignoreRoot": true
+                },
+                "bindings": {
+                    "treeController": {"<-": "@owner.fileTreeController"}
+                }
+            },
+
+            "fileCell": {
+                "prototype": "ui/file-cell.reel",
+                "properties": {
+                    "element": {"#": "file-cell"}
+                },
+                "bindings": {
+                    "fileInfo": {"<-": "@fileCell.parentComponent.iteration.content"},
+                    "iteration": {"<-": "@fileCell.parentComponent.iteration"},
+                    "projectController": {"<-": "@owner.projectController"},
+                    "classList.has('contextualMenu-selection')": {"<-": "@owner.templateObjects.contextualMenu.fileInfo == fileInfo"}
+                }
+            },
+            "resource": {
+                "prototype": "ui/resource.reel",
+                "properties": {
+                    "element": {"#": "resource"}
+                }
             }
         }
-       
-    }
     </script>
 </head>
 <body>
-    <div data-montage-id="owner" class="TeacherDashboardResources">
-        <div class="header_wrapper">
-            <h1>Resources</h1>
-            <button data-montage-id="New Folder" class="new_folder_btn"></button>
-            <button data-montage-id="Delete" class="delete_btn"></button>
-            <button data-montage-id="Open in Tabs" class="open_in_tabs_btn"></button>
-            <p class="resources_subheader">My Resources</p>
+    <div data-montage-id="teacher-dashboard-resources" data-montage-skin="light" class="teacher-dashboard-resources">
+        <div data-montage-id="resources-header"></div>
+        <div class="resource-wrapper">
+        	<div data-montage-id="fileList" class="PackageExplorer-list">
+                <span data-montage-id="file-cell" data-arg="treeNode"></span>
+            </div>
+            <div data-montage-id="resource"></div>
         </div>
-      
-        <!-- <input type="checkbox" data-montage-id="checkbox"> -->
-        
-
-
     </div>
 </body>
 </html>
