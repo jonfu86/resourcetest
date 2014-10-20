@@ -8,9 +8,10 @@
     transition: .1s linear background-color, outline-color;*/
     position: relative;
     font-family: 'Roboto';
-    margin:5px 0px 0px 20px;
+    margin:5px 0px 0px 30px;
     font-size:18px;
     /*padding:3px;*/
+    color:#666666;
 }
 
 .FileCell .montage-invisible {
@@ -58,7 +59,8 @@
 }
 .FileCell:hover{
     background: #F7F7F7;
-    color:#666666;
+
+    
 }
 
 .FileCell .FileCell-button:hover {
@@ -70,6 +72,7 @@
 .FileCell .FileCell-button:focus {
     border-color: transparent;
     background-color: transparent;
+    font-size:19px;
 }
 
 .FileCell .FileCell-button {            background-image: url(../../assets/icons/folder.jpg); }
@@ -84,7 +87,7 @@
 
 
 .FileCell-button-label {
-    padding: 0px 3px;
+    padding: 0px 10px;
 }
 
 .FileCell-button.open .FileCell-button-label {
