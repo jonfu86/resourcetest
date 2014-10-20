@@ -1,0 +1,48 @@
+.Resource {
+
+}
+.resource_thumb{
+	width:30px;
+	height:30px;
+	border:1px solid #999;
+	margin-right:10px;
+	vertical-align: middle;
+}
+.resource_title{
+	font-family:"roboto";
+	font-weight:500;
+	font-size:14px;
+	/*color: #999999;*/
+	display:inline-block;
+	margin-right:5px;
+}
+.resource_url{
+	font-family:"roboto";
+	font-weight:400;
+	font-size:12px;
+	color: #B3B3B3;
+	display:inline-block;
+	margin-right:15px;
+}
+.resource_description{
+	font-family:"roboto";
+	font-weight:400;
+	font-size:11px;
+	/*color: #999999;*/
+	display:inline-block;
+}
+.fa-caret-down{
+	color:#666666;
+	width: 11px;
+	height: 5px;
+}
+.fa-caret-right{
+	color:#666666;
+	width: 5px;
+	height: 11px;
+}
+.fa-folder{
+	color:#666666;
+	width:20px;
+	height:16px;
+}

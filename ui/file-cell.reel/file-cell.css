@@ -1,0 +1,165 @@
+.FileCell {
+    display: flex;
+    /*white-space: nowrap;
+
+    -webkit-transition: .1s linear background-color, outline-color;
+    -moz-transition: .1s linear background-color, outline-color;
+    -ms-transition: .1s linear background-color, outline-color;
+    transition: .1s linear background-color, outline-color;*/
+    position: relative;
+    font-family: 'Roboto';
+    margin:5px 0px 0px 20px;
+    font-size:18px;
+    /*padding:3px;*/
+}
+
+.FileCell .montage-invisible {
+    display: inline-block;
+    visibility: hidden;
+}
+
+.FileCell-condition {
+    flex-shrink: 0;
+}
+.selected{
+    color:white;
+    font-size:18px;
+    background:#999;
+}
+/* Button --------------------------------- */
+
+.FileCell .FileCell-button {
+    flex-shrink: 0;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	-ms-appearance: none;
+	appearance: none;
+	text-align: left;
+	height: auto;
+    min-height: 22px;
+	min-width: 0;
+	margin: 0;
+	border-radius: 0;
+    border: none;
+    font-family: 'Roboto';
+    /*margin:5px 0px 0px 20px;*/
+    font-size:18px;
+    padding:3px;
+	/*font-family: inherit;
+	
+    font-size: 14px;
+	
+    color: hsl(0, 0%, 70%);*/
+    background: none;
+    background-repeat: no-repeat;
+    padding-left: 18px;  Same as indentValue of tree.reel/indent.js 
+    background-size: 16px 16px;
+    background-position: 0px center;
+}
+.FileCell:hover{
+    background: #F7F7F7;
+    color:#666666;
+}
+
+.FileCell .FileCell-button:hover {
+    /*color: hsl(0, 0%, 100%);*/
+}
+
+.FileCell .FileCell-button:hover,
+.FileCell .FileCell-button:active,
+.FileCell .FileCell-button:focus {
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.FileCell .FileCell-button {            background-image: url(../../assets/icons/folder.jpg); }
+.FileCell .FileCell-button.folder {     background-image: url(../../assets/icons/pe-folder.svg); }
+.FileCell .FileCell-button.html {       background-image: url(../../assets/icons/pe-file-html.svg); }
+.FileCell .FileCell-button.css {        background-image: url(../../assets/icons/pe-file-css.svg); }
+.FileCell .FileCell-button.js {         background-image: url(../../assets/icons/pe-file-js.svg); }
+.FileCell .FileCell-button.json {       background-image: url(../../assets/icons/pe-file-json.svg); }
+.FileCell .FileCell-button.image {      background-image: url(../../assets/icons/pe-image.svg); }
+.FileCell .FileCell-button.reel {       background-image: url(../../assets/icons/pe-reel.svg); }
+.FileCell .FileCell-button.package {    background-image: url(../../assets/icons/pe-package.svg); }
+
+
+.FileCell-button-label {
+    padding: 0px 3px;
+}
+
+.FileCell-button.open .FileCell-button-label {
+    color: hsl(0, 0%, 90%);
+    border-radius: 2px;
+    background-color: hsl(0, 0%, 36%);
+    box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.06);
+}
+
+.PackageExplorer.activeTarget .FileCell-button.open .FileCell-button-label {
+    background-color: hsl(0, 0%, 46%);
+}
+
+.FileCell.contextualMenu-selection .FileCell-button .FileCell-button-label {
+    color: hsl(0, 0%, 90%);
+    border-radius: 2px;
+    box-shadow: 0 1px 1px hsla(0, 0%, 0%, 0.06);
+    background-color: hsl(0, 0%, 46%);
+}
+
+.FileCell--dragHover {
+    background-color: rgba(97, 166, 255, 0.3);
+    outline: 1px solid rgb(97, 166, 255);
+    outline-offset: -1px;
+}
+
+.FileCell--dragHover .FileCell-button,
+.FileCell--uploading .FileCell-button {
+    color: #fff;
+}
+
+.FileCell--uploading {
+    background-color: rgba(255, 135, 0, 0.3);
+    outline: 1px solid rgb(255, 135, 0);
+    outline-offset: -1px;
+}
+
+.FileCell-uploadStatus {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    color: hsl(0, 0%, 97%);
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: flex;
+}
+
+.FileCell-uploadStatus * {
+    pointer-events: none;
+}
+
+.FileCell--uploading .FileCell-uploadStatus {
+    opacity: 1;
+}
+
+.FileCell-uploadStatus-report {
+    background-color: rgb(255, 135, 0);
+    -webkit-flex: initial;
+    -moz-flex: initial;
+    -ms-flex: initial;
+    flex: initial;
+}
+
+.FileCell-uploadStatus-progress.matte-Progress {
+    background-color: transparent;
+    border: none;
+    flex: 1;
+    height: 100%;
+}
+
+.FileCell-uploadStatus-progress.matte-Progress > .matte-Progress-bar {
+    background-color: rgba(255, 135, 0, 0.3);
+}

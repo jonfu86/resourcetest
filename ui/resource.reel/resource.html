@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="resource.css">
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "resource"}
+            }      
+        },
+        "resourceTitle": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "resource-title"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.fileInfo.name"}
+            }
+        },
+        "resourceUrl": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "resource-url"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.fileInfo.url"}
+            }
+        },
+        "resourceDescription": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "resource-description"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.fileInfo.description"}
+            }
+        }
+
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="resource" class="resource">
+        <div class="item_wrapper">
+            <!-- only items class="group-header" and  "Period 1 - History" should have caret and folder -->
+            <!-- <p data-montage-id="rep-item" class="item"></p>  Actual repetition item goes here-->
+
+            <!-- image path should be stored as a property of the resource -->
+            <img class="resource_thumb" src="http://www.booksshouldbefree.com/image/detail/French-Revolution.jpg">
+            
+            <!-- title of website -->  
+            <div data-montage-id="resource-title" class="resource_title"></div>
+            <div class="resource_title">The American Revolution</div>
+            
+            <!-- url of website -->    
+            <div data-montage-id="resource-url" class="resource_url"></div>
+            <div class="resource_url">americanrevolution.com</div>
+            
+            <!-- description of resource --> 
+            <div data-montage-id="resource-description" class="resource_description"></div>
+            <div class="resource_description">This is the description of the website americanrevolution.com</div>
+                
+
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    
+    <link href="file-cell.css" rel="stylesheet">
+    
+    <script type="text/montage-serialization">
+    {
+        "owner": {
+            "properties": {
+                "element": {"#": "file-cell"}
+            }
+        },
+
+        "fileTitle": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "file-title"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.fileInfo.name"}
+            }
+        },
+
+        "openFileButton": {
+            "prototype": "matte/ui/button.reel",
+            "properties": {
+                "element": {"#": "open-file-button"}
+            },
+            "bindings": {
+                "classList.has('folder')": {"<-": "@owner.fileInfo.isDirectory"},
+                "classList.has('reel')": {"<-": "@owner.fileInfo.isReel"},
+                "classList.has('html')": {"<-": "@owner.fileInfo.isHtml"},
+                "classList.has('css')": {"<-": "@owner.fileInfo.isCss"},
+                "classList.has('js')": {"<-": "@owner.fileInfo.isJavaScript"},
+                "classList.has('json')": {"<-": "@owner.fileInfo.isJson"},
+                "classList.has('package')": {"<-": "@owner.fileInfo.isPackage"},
+                "classList.has('image')": {"<-": "@owner.fileInfo.isImage"},
+                "classList.has('open')": {"<-": "@owner.fileInfo.associatedDocument"}
+            },
+            "listeners": [
+                {
+                    "type": "action",
+                    "listener": {"@": "owner"}
+                }
+            ]
+        },
+
+        "expanded": {
+            "prototype": "ui/toggle.reel",
+            "properties": {
+                "element": {"#": "expanded"}
+            },
+            "bindings": {
+                "checked": {"<->": "@owner.iteration.expanded"},
+                "label": {"<-": "@owner.fileInfo.name + ' expanded'"}
+            }
+        },
+
+        "isDirectoryCondition": {
+            "prototype": "montage/ui/condition.reel",
+            "properties": {
+                "element": {"#": "isDirectoryCondition"},
+                "removalStrategy": "hide"
+            },
+            "bindings": {
+                "condition": {"<-": "has(@owner.fileInfo.children)"}
+            }
+        },
+
+        "uploadDoneCount": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "uploadDoneCount"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.uploadedFileCount"}
+            }
+        },
+
+        "uploadTotalCount": {
+            "prototype": "montage/ui/text.reel",
+            "properties": {
+                "element": {"#": "uploadTotalCount"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.expectedUploadedFileCount"}
+            }
+        },
+
+        "uploadProgress": {
+            "prototype": "matte/ui/progress.reel",
+            "properties": {
+                "element": {"#": "uploadProgress"}
+            },
+            "bindings": {
+                "value": {"<-": "@owner.uploadedFileCount"},
+                "max": {"<-": "@owner.expectedUploadedFileCount"}
+            }
+        }
+    }
+    </script>
+</head>
+<body>
+    <div data-montage-id="file-cell" class="FileCell">
+        <span class="FileCell-uploadStatus">
+            <span data-montage-id="uploadProgress" class="FileCell-uploadStatus-progress"></span>
+            <span class="FileCell-uploadStatus-report">
+                <span data-montage-id="uploadDoneCount"></span>/<span data-montage-id="uploadTotalCount"></span>
+            </span>
+        </span>
+        <span data-montage-id="isDirectoryCondition" class="FileCell-condition">
+            <input data-montage-id="expanded" type="checkbox">
+        </span>
+        <div data-montage-id="open-file-button" class="FileCell-button" draggable="true">
+            <span data-montage-id="file-title" class="FileCell-button-label"></span>
+        </div>
+    </div>
+</body>
+</html>

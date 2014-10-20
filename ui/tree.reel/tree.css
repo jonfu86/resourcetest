@@ -1,0 +1,14 @@
+.PackageExplorer .Tree-list {
+    /* TODO: Remove the first item so the minus margin is not needed */
+    margin: 8px 0 0 8px;
+}
+
+.Tree-list-row.selected {
+	font-family: 'Roboto';
+	/*font-weight:700;*/
+	/*color:#666666;*/
+	color:white;
+	font-size:18px;
+	background:#999;
+    /*background-color: #aaaaff;*/
+}
